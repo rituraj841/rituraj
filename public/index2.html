@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>This is bootstrap example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron">
+     <h3>CONVERSION </h3>
+     <!--<a class="btn btn-success" href="bootstrap.html"> tap here</a>-->
+     <form method="get" action="/result">
+     <label for="num1">No.1 :</label>
+     <input type="number" name="num1" required class="form-control input-lg" name="nm1" placeholder="Enter the first Number" />
+          </p>
+     <label for="num2">No.2 :</label>     
+      <input type="number" name="num2" required class="form-control input-lg" name="nm2" placeholder="Enter the first Number" />
+          </p>
+     <label for="num1">Select Unit :</label>     
+      <select  required class="form-control" name="operator">
+            <option value="cm">cm to m</option>
+            <option value="-">Subtract</option>
+            <option value="*">Multiply</option>
+            <option value="div">Divide</option>
+          </select>
+
+      <BR>    
+      <input type="submit" class="btn btn-primary btn-lg"></button>
+      </BR>
+      </form>  
+  </div>
+  </div>
