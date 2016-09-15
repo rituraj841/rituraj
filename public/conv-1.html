@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Arithmetic Calculator</title>
+  <title>This is bootstrap example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,18 +21,37 @@
       </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
         <li class="dropdown">
 
         </li>
-        <li><a href="app.js">Calculators</a></li>
-        <li><a href="index2.html">Conversions</a></li>
+        <li><a href="calc-1.html">Calculator</a></li>
+        <li><a href="conv-1.html">Conversions</a></li>
       </ul>
       </div>
   </div>
 </nav>
+
+
+
 <div class="container">
   <div class="jumbotron">
-     <h3>This is Arithmetic Calculator.You can select from many calculators and conversion tools. </h3>
-     </div>
+     <h3>CONVERSION </h3>
+     <!--<a class="btn btn-success" href="bootstrap.html"> tap here</a>-->
+     <form method="post" action="/conv">
+     <label for="num">Coolie No.1 :</label>
+     <input type="number" required class="form-control input-lg" name="num" placeholder="Enter the Number" />
+          </p>
+     <label for="num1">Select Unit :</label>     
+      <select  required class="form-control" name="operator">
+            <option value="cm2m">Cm to M</option>
+            <option value="ft2m">Ft to M</option>
+            <option value="ft2in">Ft to Inch</option>
+            <option value="mt2in">Meter To Inch</option>
+          </select>
+
+      <BR>    
+      <input type="submit" class="btn btn-primary btn-lg"></button>
+      </BR>
+      </form>  
+  </div>
   </div>

@@ -1,7 +1,15 @@
 var exp = require('express');
 var app = exp();
+var hbars = require('express-handlebars');
+var bodyparser = require('body-parser');
 
 app.use(exp.static(__dirname + "/public"));
+
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({extended:false}));
+
+app.set('view engine', 'handlebars');
+app.engine('handlebars', hbars({}));
 
 var html1 = '<!DOCTYPE html>'
 	  + '<html lang="en">'
@@ -19,14 +27,12 @@ var html1 = '<!DOCTYPE html>'
       + '<div class="container">'
       + '<h3>Result </h3>';
 
-var html2 ='<br><br><br><a class="btn btn-success" href="/"> click here to got to index page</a></div></div></div>'
+
+
+var html2 ='<br><br><br><a class="btn btn-success" href="/"> Click here to go to Homepage</a></div></div></div>'
       + '</body></html>';
-app.get('/new', function(req, res){     //route for http get request for path /new 
-	res.write(html);
-	res.end();
-});
 
-
+//-------------------------MAPPING FOR method=get & action=/result-------------------
 app.get('/result', function(req, res){     //route for http get request for path /new 
 
 var number1 = parseInt(req.query.num1);
@@ -48,8 +54,33 @@ console.log(result);
 		
 	res.write(html1 + result + html2);
 	res.end();
-});
+});//app.get/result
 
+
+
+
+//-------------------------MAPPING FOR method=post & action=/conv-------------------
+app.post('/conv', function(req, res){     //route for http post request for path /conv 
+console.log("received a post request");
+var number1 = parseInt(req.body.num);
+var operator = req.body.operator;
+var result = 0;
+
+if(operator === "cm2m"){
+ 	result = number1 / 100;
+}else if (operator === "ft2m"){
+	result = number1 * 3.2808;
+}else if (operator === "ft2in"){
+	result = number1 * 0.083333;	
+}else if (operator === "mt2in"){
+	result = number1 /0.039370;
+}
+
+console.log(result);
+		
+	res.write(html1 + result + html2);
+	res.end();
+});//app.get/result
 
 
 //process.env.npm_package_config_port
